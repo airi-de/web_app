@@ -3,7 +3,7 @@ from pyexpat.errors import messages
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
-from django.forms import QuestionForm
+from .import forms
                               
 
 # Create your views here.
@@ -13,7 +13,7 @@ class TopView(TemplateView):
 
 class QuestionView(FormView):
     template_name="mondai1/question.html"
-    form_class=QuestionForm                 
+    form_class=forms.QuestionForm                 
                                              
     success_url = reverse_lazy('mondai1_3:question')
     
